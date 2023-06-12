@@ -1,0 +1,50 @@
+1. Write a program to find the given number is odd or even using solidity
+pragma solidity ^0.8.0;
+contract OddOrEven {
+ function check(uint256 number) public pure returns (string memory) {
+ if (number % 2 == 0) {
+ return "Even";
+ } else {
+ return "Odd";
+ }
+ }
+}
+
+2. Write a program to find the nth fibonaaci using solidity
+pragma solidity ^0.8.0;
+contract Fibonacci {
+ function fib(uint256 n) public pure returns (uint256) {
+ if (n == 0) {
+ return 0;
+ } else if (n == 1) {
+ return 1;
+ } else {
+ return fib(n-1) + fib(n-2);
+ }
+ }
+}
+
+3. Write a program to find the given number is prime or not using solidity
+pragma solidity ^0.8.0;
+contract Prime {
+ function isPrime(uint256 number) public pure returns (bool) {
+ if (number <= 1) {
+ return false;
+ }
+ for (uint256 i = 2; i <= number / 2; i++) {
+ if (number % i == 0) {
+ return false;
+ }
+ }
+ return true;
+ }
+}
+
+
+4. Create a new transaction with signing using solidity
+pragma solidity ^0.8.0;
+contract SendMoney {
+ function send(address payable receiver) public payable {
+ receiver.transfer(msg.value);
+ }
+}
